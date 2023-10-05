@@ -15,28 +15,12 @@
             <p>If you want to know more about me press this button</p>
         </div>
         
-        <!-- Links to About Me and Other Pages -->
+
         <div class="redirect-links">
             <a href="/about" class="btn btn-primary">About Me</a>
-            <!-- Add other buttons or links for other pages as needed -->
         </div>
     </div>
 </main>
 
 <%- include ('partials/bottom_nav.ejs') %>
 <%- include ('partials/footer.ejs') %>
-
-.mission-statement {
-  margin: 20px 0;
-  border-left: 3px solid #007BFF;
-  padding-left: 20px;
-}
-
-.redirect-links .btn {
-  margin-right: 10px; /* Space between buttons if you have multiple */
-}
-
-// Assuming you're using Express.js
-app.get('/about', (req, res) => {
-res.render('about'); // This assumes you have an 'about.ejs' file in your views directory.
-});

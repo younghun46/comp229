@@ -1,70 +1,63 @@
 <%- include ('partials/header.ejs') %>
 <%- include ('partials/main_nav.ejs') %>
 
-    <!-- <img src="img/logo.png" alt="logo"> -->
-
-    <main class="container">
-        <div class="jumbotron">
-            <h1>Welcome to <%= title %> Page</h1>
+<main class="container">
+    <div class="jumbotron">
+        <h1>Welcome to <%= title %> Page</h1>
+    </div>
+    
+    <!-- Contact Information Panel -->
+    <div class="contact-panel">
+        <h2>Contact Information</h2>
+        <p><strong>Address:</strong> 937 Progress Ave, Scarborough, Canada</p>
+        <p><strong>Email:</strong> ymun1@my.centennialcollege.ca</p>
+        <p><strong>Phone:</strong> +1-647-624-5607</p>
+    </div>
+    
+    <!-- Interactive Form -->
+    <form id="contact-form">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
         </div>
     
-        <!-- Contact Information Panel -->
-        <div class="contact-panel">
-            <h2>Contact Information</h2>
-            <p><strong>Address:</strong> 937 Progress Ave, Scarborough, Canada</p>
-            <p><strong>Email:</strong> ymun1@my.centennialcollege.ca</p>
-            <p><strong>Phone:</strong> +1-647-624-5607</p>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
         </div>
     
-        <!-- Interactive Form -->
-        <form action="/submit" method="post" id="contact-form">
-            <div class="form-group">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required>
-            </div>
+        <div class="form-group">
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required>
+        </div>
     
-            <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required>
-            </div>
+        <div class="form-group">
+            <label for="emailAddress">Email Address:</label>
+            <input type="email" id="emailAddress" name="emailAddress" required>
+        </div>
     
-            <div class="form-group">
-                <label for="contactNumber">Contact Number:</label>
-                <input type="tel" id="contactNumber" name="contactNumber" required>
-            </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
     
-            <div class="form-group">
-                <label for="emailAddress">Email Address:</label>
-                <input type="email" id="emailAddress" name="emailAddress" required>
-            </div>
-    
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-    
-            <input type="submit" value="Send Message">
-        </form>
-    </main>
-    
+        <input type="submit" value="Send Message">
+    </form>
+</main>
 
-      <%- include ('partials/bottom_nav.ejs') %>
-      <%- include ('partials/footer.ejs') %>
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>
 
-
-      <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-
-            const formData = new FormData(event.target);
-            for (var pair of formData.entries()) {
-                console.log(pair[0] + ': ' + pair[1]);
-            }
-            
-            // Redirect to Home Page
-            window.location.href = 'home'; // replace '/home' with your home page URL if different
-        });
-        </script>
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
         
-   
+        const formData = new FormData(event.target);
+        
+        for (var pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
+        
+        window.location.href = '/';
+    });
+</script>
