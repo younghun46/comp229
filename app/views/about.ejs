@@ -1,0 +1,57 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
+
+<main class="container">
+    <!-- Introduction and Image -->
+    <section id="about-introduction">
+        <h2>About Me</h2>
+        
+        <!-- Replace 'path-to-your-image.jpg' with the actual path to your image -->
+        <img src= "/img/profile-pic.jpg" alt="Younghun" class="profile-pic">
+        
+        <p>
+            Hello! I'm [Younghun Mun]. Hello! I'm Younghun Mun. I am from South Korea, I am studying Software Engineering Technology - AI in Centennial College.
+        </p>
+    </section>
+    
+    <!-- Resume Section -->
+    <section id="resume">
+        <h3>My Resume</h3>
+        <p>Interested in learning more about my professional background? Check out my resume:</p>
+        
+        <!-- Button to Display PDF in-browser -->
+        <button id="view-resume-btn">View Resume</button>
+        
+        <!-- Link to Download the PDF -->
+        <p>Or <a href="/img/resume.pdf" dow d>download my resume</a> for offline viewing.</p>
+        
+        <!-- Embed PDF for in-browser viewing -->
+        <div id="resume-container" style="display:none;">
+            <embed src="/img/resume.pdf" type="application/pdf" width="100%" height="600px" />
+        </div>
+    </section>
+</main>
+
+<style>
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 20px 0;
+    }
+
+    #resume {
+        margin-top: 50px;
+    }
+</style>
+
+<script>
+    document.getElementById('view-resume-btn').addEventListener('click', function() {
+        const resumeContainer = document.getElementById('resume-container');
+        resumeContainer.style.display = 'block';
+    });
+</script>
+
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>

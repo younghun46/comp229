@@ -1,0 +1,42 @@
+
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
+
+<main class="container">
+    <div class="jumbotron">
+        <h1>Welcome to [Younghun's Home]</h1>
+        <p>"Welcome to [Younghun's Home]! Dive into a world where possibilities are endless and every moment counts. Whether you're here for [See my information & projects], to hire me, or simply to discover who I am all about, I am thrilled to have you. Let's make the most of today together."
+
+        </p>
+        
+
+        <div class="mission-statement">
+            <h2>Press The Button</h2>
+            <p>If you want to know more about me press this button</p>
+        </div>
+        
+        <!-- Links to About Me and Other Pages -->
+        <div class="redirect-links">
+            <a href="/about" class="btn btn-primary">About Me</a>
+            <!-- Add other buttons or links for other pages as needed -->
+        </div>
+    </div>
+</main>
+
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>
+
+.mission-statement {
+  margin: 20px 0;
+  border-left: 3px solid #007BFF;
+  padding-left: 20px;
+}
+
+.redirect-links .btn {
+  margin-right: 10px; /* Space between buttons if you have multiple */
+}
+
+// Assuming you're using Express.js
+app.get('/about', (req, res) => {
+res.render('about'); // This assumes you have an 'about.ejs' file in your views directory.
+});

@@ -1,0 +1,99 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
+
+<main class="container">
+    <h2>Highlighted Projects</h2>
+    
+    <!-- Project 1 -->
+    <div class="project-item">
+        <img src="/img/project1.png" alt="Project 1 Name" class="project-img" onclick="showLightbox('/img/project1.png')">
+        <div class="project-info">
+            <h3>Project 1 Name</h3>
+            <p><strong>Role:</strong> Your Role (e.g., Lead Developer)</p>
+            <p><strong>Outcome:</strong> A brief outcome or achievement related to the project. (e.g., Successfully developed a responsive web application that boosted user engagement by 50%).</p>
+        </div>
+    </div>
+    
+    <!-- Project 2 -->
+    <div class="project-item">
+        <img src="/img/project2.png" alt="Project 2 Name" class="project-img" onclick="showLightbox('/img/project2.png')">
+        <div class="project-info">
+            <h3>Project 2 Name</h3>
+            <p><strong>Role:</strong> Your Role (e.g., Project Manager)</p>
+            <p><strong>Outcome:</strong> A brief outcome or achievement related to the project. (e.g., Managed a team of 5 to deliver the project ahead of the deadline).</p>
+        </div>
+    </div>
+    
+    <!-- Project 3 -->
+    <div class="project-item">
+        <img src="/img/project3.png" alt="Project 3 Name" class="project-img" onclick="showLightbox('/img/project3.png')">
+        <div class="project-info">
+            <h3>Project 3 Name</h3>
+            <p><strong>Role:</strong> Your Role (e.g., UI/UX Designer)</p>
+            <p><strong>Outcome:</strong> A brief outcome or achievement related to the project. (e.g., Designed an intuitive user interface that received positive feedback from 90% of beta testers).</p>
+        </div>
+    </div>
+</main>
+
+<!-- Lightbox Container -->
+<div id="lightbox" onclick="hideLightbox()">
+    <img id="lightbox-img" src="" alt="Project Image">
+</div>
+
+<style>
+    .project-item {
+        border: 1px solid #e0e0e0;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .project-img {
+        width: 150px;
+        height: 150px;
+        margin-right: 20px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .project-info {
+        flex: 1;
+    }
+
+    #lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #lightbox-img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+</style>
+
+<script>
+    function showLightbox(imgSrc) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = imgSrc;
+        lightbox.style.display = 'flex';
+    }
+
+    function hideLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none';
+    }
+</script>
+
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>

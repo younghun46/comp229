@@ -1,0 +1,51 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
+
+<main class="container">
+    <h2>Our Services</h2>
+    
+    <!-- Service 1: General Programming -->
+    <div class="service-item">
+        <img src="/img/java.png" alt="General Programming" class="service-img">
+        <h3>General Programming</h3>
+        <p>I provide high-quality general programming services to cater to your specific needs, ensuring optimized, efficient, and scalable solutions.</p>
+    </div>
+    
+    <!-- Service 2: Web Development -->
+    <div class="service-item">
+        <img src="/img/JavaScript-logo.png" alt="Web Development" class="service-img">
+        <h3>Web Development</h3>
+        <p>From responsive designs to interactive user interfaces, our web development solutions are tailored to create the best online presence for you.</p>
+    </div>
+    
+    <!-- Service 3: Mobile Apps -->
+    <div class="service-item">
+        <img src="/img/android-logo.jpg" alt="Mobile Apps" class="service-img">
+        <h3>Mobile Apps</h3>
+        <p>We design and develop user-centric mobile applications that enhance user engagement and drive business growth.</p>
+    </div>
+    
+    <!-- Add more services as needed -->
+    
+</main>
+
+<style>
+    .service-item {
+        border: 1px solid #e0e0e0;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .service-img {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        object-fit: cover;
+    }
+</style>
+
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>
